@@ -11,15 +11,19 @@ app.get("/", (req, res) => {
 })
 
 app.get("/about", (req, res) => {
-    res.sendFile("./public/about.html", { root: __dirname })
+    res.render("about")
 })
 
 app.get("/about-me", (req, res) => {
     res.redirect("/about")
 })
 
+app.get("/blogs/create", (req, res) => {
+    res.render("create")
+})
+
 app.use((req, res) => {
-    res.sendFile("./public/404.html", { root: __dirname })
+    res.status(404).render("404")
 })
 
 app.listen("3000", () => console.log("Server running..."))
