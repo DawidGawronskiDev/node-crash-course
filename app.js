@@ -6,6 +6,8 @@ const app = express()
 // register view engine
 app.set("view engine", "ejs")
 
+app.use(express.static("public"))
+
 app.get("/", (req, res) => {
     const blogs = [
         {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
