@@ -7,7 +7,7 @@ const app = express()
 app.set("view engine", "ejs")
 
 app.get("/", (req, res) => {
-    res.sendFile("./public/index.html", { root: __dirname })
+    res.render("index")
 })
 
 app.get("/about", (req, res) => {
